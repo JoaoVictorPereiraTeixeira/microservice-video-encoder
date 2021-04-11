@@ -1,12 +1,12 @@
 package repositories_test
 
 import (
-	"encoder/application/repositories"
-	"encoder/domain"
-	"encoder/framework/database"
 	"testing"
 	"time"
 
+	"github.com.br/JoaoVictorPereiraTeixeira/application/repositories"
+	"github.com.br/JoaoVictorPereiraTeixeira/domain"
+	"github.com.br/JoaoVictorPereiraTeixeira/framework/database"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/require"
 )

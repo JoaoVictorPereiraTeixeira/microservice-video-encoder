@@ -2,14 +2,15 @@ package services
 
 import (
 	"context"
-	"encoder/application/repositories"
-	"encoder/domain"
+
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 
 	"cloud.google.com/go/storage"
+	"github.com.br/JoaoVictorPereiraTeixeira/application/repositories"
+	"github.com.br/JoaoVictorPereiraTeixeira/domain"
 )
 
 type VideoService struct {
@@ -44,7 +45,7 @@ func (v *VideoService) Download(bucketName string) error {
 		return err
 	}
 
-	f, err := os.Create(os.Getenv("localStoragePath") + v.Video.ID + ".mp4")
+	f, err := os.Create(os.Getenv("localStoragePath") + "/" + v.Video.ID + ".mp4")
 	if err != nil {
 		return err
 	}

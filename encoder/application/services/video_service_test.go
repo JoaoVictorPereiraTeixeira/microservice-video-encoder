@@ -1,17 +1,15 @@
 package services_test
 
 import (
-	"encoder/application/repositories"
-	"encoder/application/services"
-	"encoder/domain"
-	"encoder/framework/database"
 	"log"
-	"testing"
 	"time"
+
+	"github.com.br/JoaoVictorPereiraTeixeira/application/repositories"
+	"github.com.br/JoaoVictorPereiraTeixeira/domain"
+	"github.com.br/JoaoVictorPereiraTeixeira/framework/database"
 
 	"github.com/joho/godotenv"
 	uuid "github.com/satori/go.uuid"
-	"github.com/stretchr/testify/require"
 )
 
 func init() {
@@ -34,23 +32,23 @@ func prepare() (*domain.Video, repositories.VideoRepository) {
 	return video, repo
 }
 
-func TeteVideoServiceDownload(t *testing.T) {
+// func TeteVideoServiceDownload(t *testing.T) {
 
-	video, repo := prepare()
+// 	video, repo := prepare()
 
-	videoService := services.NewVideoService()
-	videoService.Video = video
-	videoService.VideoRepository = repo
+// 	videoService := services.NewVideoService()
+// 	videoService.Video = video
+// 	videoService.VideoRepository = repo
 
-	err := videoService.Download("codeeducationtest")
-	require.Nil(t, err)
+// 	err := videoService.Download("video-to-upload")
+// 	require.Nil(t, err)
 
-	err = videoService.Fragment()
-	require.Nil(t, err)
+// 	err = videoService.Fragment()
+// 	require.Nil(t, err)
 
-	err = videoService.Encode()
-	require.Nil(t, err)
+// 	err = videoService.Encode()
+// 	require.Nil(t, err)
 
-	err = videoService.Finish()
-	require.Nil(t, err)
-}
+// 	err = videoService.Finish()
+// 	require.Nil(t, err)
+// }
