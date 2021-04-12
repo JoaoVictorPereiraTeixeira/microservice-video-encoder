@@ -34,7 +34,6 @@ func (vu *VideoUpload) UploadObject(objectPath string, client *storage.Client, c
 	f, err := os.Open(objectPath)
 
 	if err != nil {
-		fmt.Print("ERROR AQUI TESTE")
 		return err
 	}
 
@@ -44,7 +43,6 @@ func (vu *VideoUpload) UploadObject(objectPath string, client *storage.Client, c
 	wc.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
 
 	if _, err = io.Copy(wc, f); err != nil {
-		fmt.Print("ERROR AQUI 2A")
 		return err
 	}
 
