@@ -1,3 +1,4 @@
 *.env
-encoder/bucket-credential.json
+
+/bucket-credential.json
 
